@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title">Testcase history</h3>
+</div>
+<div class="modal-body" style="height: 250px;
+overflow-y: auto">
+<table id="classTable" class="table table-bordered">
+    <thead>
+        <tr>
+        <td>Time</td>
+        <td>Status</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="hist in vm.history track by $index">
+        <td>{{hist.time}}</td>
+        <td>{{hist.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="$close()">Cancel</button>
+</div>

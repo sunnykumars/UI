@@ -1,0 +1,26 @@
+pip install django-oauth-toolkit 
+pip install djangorestframework
+pip install django-cors-headers
+
+python manage.py migrate
+
+python manage.py createsuperuser 
+			admin/admin
+
+python manage.py runserver
+
+http://localhost:8000/admin
+	login : admin/admin
+	Create Application
+		Name: charter
+		Client Type: "confidential"
+		Authorization Grant Type: "Resource owner password-based"
+		client_id: charter
+		client_secret: charter
+
+	
+curl -X POST -d "grant_type=password&username=admin&password=admin&client_id=chartery&client_secret=charter" http://localhost:8000/o/token/
+
+curl -H "Authorization: Bearer 7GRTJQycyOLOPfdlCwaQgFVG9zV0A9" http://localhost:8000/users/
+
+curl -X POST -d "grant_type=refresh_token&refresh_token=igRjhFI5lpQM8xquSwdiY9XPSSNuwC&client_id=chartery&client_secret=charter" http://localhost:8000/o/token/

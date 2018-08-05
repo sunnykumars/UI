@@ -1,0 +1,6 @@
+{
+	"apiserver_ip" : "localhost",
+	"apiserver_port" : 8088,
+	"client_id" : "rafay",
+	"client_secret" : "rafay"
+}

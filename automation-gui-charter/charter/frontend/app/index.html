@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="charter" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="charter" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="charter" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="charter" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Charter</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/charter.png">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css">
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css">
+  <link rel="stylesheet" href="bower_components/ladda-bootstrap/dist/ladda-themeless.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <link rel="stylesheet" href="app.css">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.1.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.1.0/js/bootstrap-toggle.min.js"></script>
+  <base href="/">
+</head>
+<body>
+
+  <div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#!/home" ><img src="images/charter.png" style="height: 45px;"></a>
+			
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div ng-controller="notifyCtrl" id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active" style="cursor: pointer"><a ui-sref="home"><b>Home</b></a></li>
+                <li ui-sref-active="active" style="cursor: pointer"><a ui-sref="testcases"><b>Test Cases</b></a></li>
+                <li ui-sref-active="active" style="cursor: pointer"><a ui-sref="users"><b>Users</b></a></li>
+                <li ui-sref-active="active" style="cursor: pointer"><a ui-sref="help"><b>Help</b></a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ui-sref-active="active" ng-if="!token" style="cursor: pointer"><a ui-sref="login"><b>Login</b></a></li>
+                <li ui-sref-active="active" ng-if="token">
+                <a><b style="color: white">User : admin</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+    
+
+  <div ng-controller="notifyCtrl"><div growl style="top:55px"></div></div>
+
+  <!-- <div ng-view></div> -->
+<br>
+<br>
+<br>
+  <div ui-view="main"></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular-growl-v2/build/angular-growl.min.js"></script>
+  <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/ladda-bootstrap/dist/spin.min.js"></script>
+  <script src="bower_components/ladda-bootstrap/dist/ladda.min.js"></script>
+  <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/jszip/dist/jszip.js"></script>
+  <script src="bower_components/excel-builder-js/dist/excel-builder.dist.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-ui-router/release/stateEvents.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+  <script src="bower_components/ng-csv/build/ng-csv.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script data-require="ui-bootstrap@*" data-semver="0.12.1" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script type="text/javascript" src="export/tableExport.js"></script>
+  <script type="text/javascript" src="export/jquery.base64.js"></script>
+  <script type="text/javascript" src="export/jspdf/libs/sprintf.js"></script>
+  <script type="text/javascript" src="export/jspdf/jspdf.js"></script>
+  <script type="text/javascript" src="export/jspdf/libs/base64.js"></script>
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="login/login.js"></script>
+  <script src="help/help.js"></script>
+  <script src="testcases/testcases.js"></script>
+  <script src="users/users.js"></script>
+
+</body>
+</html>
+

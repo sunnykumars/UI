@@ -1,0 +1,72 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.banner-title {
+	font-size: 55px;
+    color: white;
+    text-align: center;
+}
+
+.sub-text {
+    color: ivory;
+    font-size: 20px;
+}
+
+.ng-invalid  { border: 1px solid red; }
+
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+   
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.modal.fade{
+  opacity:1;
+}
+.modal.fade .modal-dialog {
+   -webkit-transform: translate(0);
+   -moz-transform: translate(0);
+   transform: translate(0);
+}
+.btn-black{
+  position:absolute;
+  bottom:50px;
+  transform:translateX(-50%);
+  background:#222;
+  padding:10px 20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:14px;
+  font-weight:bold;
+}

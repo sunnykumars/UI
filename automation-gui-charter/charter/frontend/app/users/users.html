@@ -1,0 +1,31 @@
+<div ng-controller="UsersCtrl as vm">
+<button ng-click=vm.get_users()>Refresh</button>
+<button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
+    <i class="glyphicon glyphicon-plus">
+    </i> Add User
+</button>
+
+<table st-table="displayedCollection" st-safe-src="vm.data" class="table table-striped">
+    <thead>
+    <tr>
+        <th st-sort="username">User Name</th>
+        <th st-sort="role">Role</th>
+    </tr>
+    <tr>
+        <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in displayedCollection">
+        <td>{{row.username}}</td>
+        <td>{{row.role}}</td>
+        <td>
+        <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+            <i class="glyphicon glyphicon-remove-circle">
+            </i>
+        </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

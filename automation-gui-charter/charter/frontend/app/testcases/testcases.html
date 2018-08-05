@@ -1,0 +1,47 @@
+<div ng-controller="TestcasesCtrl as vm">
+<button ng-click=vm.get_testcases() class="btn btn-sm btn-primary">Refresh</button>
+<button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
+    <i class="glyphicon glyphicon-plus">
+    </i> Add Test case
+</button>
+<button ng-click=vm.export() class="btn btn-sm btn-primary">Export</button>
+<table st-table="vm.displayedCollection" st-safe-src="vm.data" class="table table-striped" id="Testcasetable">
+    <thead>
+    <tr>
+        <th>Select</th>
+        <th st-sort="test_case_no">Test case no</th>
+        <th st-sort="name">Name</th>
+        <th st-sort="status">Status</th>
+        <th st-sort="logs">Logs</th>
+        <th st-sort="history">History</th>
+    </tr>
+    <tr>
+        <th colspan="6"><input st-search="" class="form-control" placeholder="Search" type="text"/></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in vm.displayedCollection">
+        <td ng-class="{'unselectable': row.status=='In Progress'}" cs-select="row"></td>
+        <td>{{row.test_case_no}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.status}}</td>
+        <td><button type="button" class="btn btn-xs" ng-click="vm.getLogs(row.logs)">click here for logs</button></td>
+        <td><button type="button" class="btn btn-xs" ng-click="vm.getHistory(row.history)">click here for history</button></td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="vm.itemsByPage" st-displayed-pages="7"></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<button ng-click=vm.execute_testcases() class="btn btn-sm btn-primary">Execute</button>
+</div>
+<style>
+    .unselectable{
+    background-color: #ddd;
+     cursor: not-allowed;}
+</style>
